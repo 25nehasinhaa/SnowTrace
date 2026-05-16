@@ -1,0 +1,5 @@
+DIVISION,DEPARTMENT,HOLIDAY_PRICE,CURRENT_PRICE,PRICE_CHANGE_PCT,HOLIDAY_VOLUME,CURRENT_VOLUME,VOLUME_CHANGE_PCT,DRIFT_STATUS,CONFIDENCE_LEVEL,BUSINESS_EXPLANATION,RECOMMENDED_ACTION
+Beauty,Fragrances,3384.62,1085.11,-67.94,39,47,20.51,DRIFT,HIGH,Customers are shifting toward more value conscious luxury purchasing behavior after the holiday season.,Consider increasing targeted promotions and expanding accessible luxury product positioning.
+Fashion,Designer Wear,13411.76,11647.06,-13.16,17,17,0.00,STABLE,HIGH,Customer purchasing behavior remains relatively stable.,Continue current merchandising and pricing strategy.
+Fashion,Luxury Handbags,24166.67,23666.67,-2.07,6,6,0.00,INSUFFICIENT_DATA,LOW,Not enough historical purchasing activity exists to generate a reliable behavioral conclusion.,Monitor category activity until additional purchasing data becomes available.
+Beauty,Skincare,2333.33,2382.35,2.10,18,17,-5.56,INSUFFICIENT_DATA,LOW,Not enough historical purchasing activity exists to generate a reliable behavioral conclusion.,Monitor category activity until additional purchasing data becomes available.
