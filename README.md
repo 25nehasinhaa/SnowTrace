@@ -1,5 +1,7 @@
 # SnowTrace
 
+![SnowTrace decision intelligence workspace](docs/images/snowtrace-home.png)
+
 SnowTrace is a Decision Drift Intelligence application for examining how retail category performance changes between two business periods. It turns order, price, revenue, review, and delivery signals into category-level drift alerts, scenario comparisons, exploratory pivots, and an executive brief.
 
 The application uses the Brazilian E-Commerce Public Dataset by Olist. It can query Snowflake with Snowpark when an active Snowflake session is available, build the same analytical summary from local Olist CSV files, or use a committed processed sample for a credential-free demonstration.
@@ -184,6 +186,16 @@ Run the data-logic tests with the standard library test runner:
 ```
 
 The tests cover zero-baseline percentage handling, missing-period classification, material revenue drift, recommendation selection, and empty-period aggregation.
+
+## Screenshots
+
+| Category intelligence | Executive operating view |
+| --- | --- |
+| ![Fashion and Beauty intelligence](docs/images/snowtrace-fashion-beauty.png) | ![Fragrance intelligence and operating KPIs](docs/images/snowtrace-fragrance-kpis.png) |
+
+## Interview Guide
+
+For a detailed walkthrough of the architecture, folders, business logic, technical decisions, likely interview questions, and role-specific discussion points, see [SnowTrace Interview Guide](docs/SNOWTRACE_INTERVIEW_GUIDE.md).
 
 ## Future Improvements
 
