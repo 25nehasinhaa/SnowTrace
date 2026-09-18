@@ -70,6 +70,17 @@ Confidence is based on combined baseline and comparison volume: `High` at 400 or
 
 These thresholds are currently defined in code and SQL rather than exposed as user-editable settings.
 
+## Business Metric Definitions
+
+| Metric | Meaning |
+| --- | --- |
+| Departments flagged | Number of departments classified as `DRIFT` in the selected comparison window. |
+| Revenue exposure | Downside versus baseline across flagged departments: `max(baseline revenue - current revenue, 0)`, summed across those departments. It is an observed period-over-period shortfall, not total revenue, a forecast, or a loss estimate. |
+| Categories monitored | Distinct departments represented in the active analytical window. |
+| Data through | Latest order date available in the current source. |
+
+Olist transaction values are denominated in Brazilian reais, so SnowTrace displays revenue metrics with the `R$` symbol. For example, **R$116,792 Revenue Exposure** means that flagged departments collectively generated R$116,792 less revenue in the comparison period than in the baseline period. Departments above baseline contribute zero to this downside-only measure.
+
 ## Data Processing
 
 The local Pandas path:
@@ -143,14 +154,33 @@ requirements.txt
 
 ## Running Locally
 
+SnowTrace requires Python 3.10 or newer and Streamlit 1.57 or newer. The commands below create an isolated environment and install the compatible versions declared in `requirements.txt`.
+
+### Windows Command Prompt
+
+```bat
+git clone https://github.com/25nehasinhaa/SnowTrace.git
+cd SnowTrace
+python -m venv .venv
+.venv\Scripts\activate.bat
+python -m pip install --upgrade pip
+python -m pip install --upgrade -r requirements.txt
+python -m streamlit run app\Home.py
+```
+
+### Windows PowerShell
+
 ```powershell
 git clone https://github.com/25nehasinhaa/SnowTrace.git
 cd SnowTrace
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-streamlit run app/Home.py
+python -m pip install --upgrade pip
+python -m pip install --upgrade -r requirements.txt
+python -m streamlit run app/Home.py
 ```
+
+After startup, open `http://localhost:8501`. If PowerShell blocks environment activation, use `.venv\Scripts\python.exe -m pip install --upgrade -r requirements.txt` followed by `.venv\Scripts\python.exe -m streamlit run app/Home.py`.
 
 The committed processed sample is sufficient for local use. To rebuild analytics from the Olist source, place these files in `data/raw/`:
 
