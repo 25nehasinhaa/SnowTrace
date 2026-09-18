@@ -193,10 +193,6 @@ The tests cover zero-baseline percentage handling, missing-period classification
 | --- | --- |
 | ![Fashion and Beauty intelligence](docs/images/snowtrace-fashion-beauty.png) | ![Fragrance intelligence and operating KPIs](docs/images/snowtrace-fragrance-kpis.png) |
 
-## Interview Guide
-
-For a detailed walkthrough of the architecture, folders, business logic, technical decisions, likely interview questions, and role-specific discussion points, see [SnowTrace Interview Guide](docs/SNOWTRACE_INTERVIEW_GUIDE.md).
-
 ## Future Improvements
 
 - Move thresholds into governed configuration with change history.
