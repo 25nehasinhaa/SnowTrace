@@ -15,6 +15,10 @@ session = get_snowpark_session()
 baseline_start, baseline_end, comparison_start, comparison_end = render_timeframe_selector()
 df = load_drift_summary(session, baseline_start, baseline_end, comparison_start, comparison_end)
 
+if df.empty:
+    st.info("No categories are available for the selected periods. Adjust the timeframe to build a comparison.")
+    st.stop()
+
 row_options = {
     "Division": "DIVISION",
     "Department": "DEPARTMENT",
@@ -23,6 +27,9 @@ row_options = {
 value_options = {
     "Price Change Percent": "PRICE_CHANGE_PCT",
     "Volume Change Percent": "VOLUME_CHANGE_PCT",
+    "Revenue Change Percent": "REVENUE_CHANGE_PCT",
+    "Review Score Change": "REVIEW_SCORE_CHANGE",
+    "Delivery Days Change": "DELIVERY_DAYS_CHANGE",
 }
 
 col1, col2 = st.columns(2)
@@ -39,7 +46,7 @@ pivot = pd.pivot_table(
     aggfunc="mean",
 ).round(2)
 
-st.dataframe(pivot, use_container_width=True)
+st.dataframe(pivot, width="stretch")
 
 st.caption(
     "Use this view to compare average movement across planning cuts without changing the underlying dataset."

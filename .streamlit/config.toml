@@ -1,0 +1,22 @@
+[theme]
+base = "light"
+primaryColor = "#111111"
+backgroundColor = "#F5F5F2"
+secondaryBackgroundColor = "#E8EDEF"
+textColor = "#111111"
+linkColor = "#3A3A3A"
+borderColor = "#B7BABB"
+baseRadius = "small"
+buttonRadius = "small"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+headingFont = "Manrope:https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap"
+showWidgetBorder = true
+
+[theme.sidebar]
+backgroundColor = "#111111"
+secondaryBackgroundColor = "#3A3A3A"
+textColor = "#FFFFFF"
+borderColor = "#4D4D4D"
+
+[server]
+enableStaticServing = true
